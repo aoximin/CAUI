@@ -1,0 +1,69 @@
+
+/* ==================
+         进度条
+ ==================== */
+
+.cu-progress {
+	overflow: hidden;
+	height: 28upx;
+	background-color: #ebeef5;
+	display: inline-flex;
+	align-items: center;
+	width: 100%;
+}
+
+.cu-progress+view,
+.cu-progress+text {
+	line-height: 1;
+}
+
+.cu-progress.xs {
+	height: 10upx;
+}
+
+.cu-progress.sm {
+	height: 20upx;
+}
+
+.cu-progress view {
+	width: 0;
+	height: 100%;
+	align-items: center;
+	display: flex;
+	justify-items: flex-end;
+	justify-content: space-around;
+	font-size: 20upx;
+	color: #ffffff;
+	transition: width 0.6s ease;
+}
+
+.cu-progress text {
+	align-items: center;
+	display: flex;
+	font-size: 20upx;
+	color: #333333;
+	text-indent: 10upx;
+}
+
+.cu-progress.text-progress {
+	padding-right: 60upx;
+}
+
+.cu-progress.striped view {
+	background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+	background-size: 72upx 72upx;
+}
+
+.cu-progress.active view {
+	animation: progress-stripes 2s linear infinite;
+}
+
+@keyframes progress-stripes {
+	from {
+		background-position: 72upx 0;
+	}
+
+	to {
+		background-position: 0 0;
+	}
+}
